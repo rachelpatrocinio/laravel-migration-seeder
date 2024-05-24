@@ -7,14 +7,14 @@
         <ul>
             @foreach ($trains as $train)
             <li>
-                <p>{{ $train->company }}</p>
-                <p>{{ $train->departure_station }}</p>
-                <p>{{ $train->arrival_station }}</p>
-                <p>{{ $train->departure_time }}</p>
-                <p>{{ $train->arrival_time }}</p>
-                <p>{{ $train->train_code }}</p>
+                <p><strong>Azienda:</strong>{{ $train->company }}</p>
+                <p><strong>Stazione di Partenza:</strong>{{ $train->departure_station }}</p>
+                <p><strong>Stazione di Arrivo:</strong>{{ $train->arrival_station }}</p>
+                <p><strong>Orario di Partenza:</strong>{{ $train->departure_time }}</p>
+                <p><strong>Orario di Arrivo:</strong>{{ $train->arrival_time }}</p>
+                <p><strong>Codice Treno</strong>{{ $train->train_code }}</p>
                 @if($train->cancelled === 0)
-                <p>Tratta cancellata</p>
+                <p class="text-danger">Tratta cancellata</p>
                 @endif
             </li>
             @endforeach

@@ -13,6 +13,9 @@
                 <p>{{ $train->departure_time }}</p>
                 <p>{{ $train->arrival_time }}</p>
                 <p>{{ $train->train_code }}</p>
+                @if($train->cancelled === 0)
+                <p>Tratta cancellata</p>
+                @endif
             </li>
             @endforeach
         </ul>

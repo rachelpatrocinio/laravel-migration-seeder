@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('departure_time', precision: 0);
             $table->dateTime('arrival_time', precision: 0);
             $table->integer('train_code');
-            $table->unsignedSmallInteger('number of carriages');
+            $table->unsignedSmallInteger('number_of_carriages');
             $table->boolean('on_time');
             $table->boolean('cancelled');
         });

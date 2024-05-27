@@ -20,14 +20,13 @@ class TrainSeeder extends Seeder
         DB::table('trains')->truncate();
         $companies = ['Italo', 'Eurostar', 'Freccia Rossa', 'Freccia Argento', 'Freccia Bianca'];
 
-        for($i = 0; $i < 100; $i++){
+        for($i = 0; $i < 25; $i++){
             $new_train = new Train();
             $new_train->company = $faker->randomElement($companies);
             $new_train->departure_station = $faker->city();
             $new_train->arrival_station = $faker->city();
-            // date() non è quello esatto.. 
-            $new_train->departure_time = $faker->date();
-            $new_train->arrival_time = $faker->date();
+            $new_train->departure_time = $faker->dateTimeBetween('+1 week','+2 week');
+            $new_train->arrival_time = $faker->dateTimeBetween('+2 week','+3 week');
             $new_train->train_code = $faker->bothify('#####');
             $new_train->number_of_carriages = $faker->numberBetween(11,20);
             $new_train->on_time = $faker->randomElement([true, false]);
